@@ -1,0 +1,7 @@
+$(function () {
+    fetchUsers();
+
+    function fetchUsers() {
+
+    }
+})
