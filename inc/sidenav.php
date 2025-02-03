@@ -11,17 +11,41 @@
             <li class="nav-item">
                 <a class="nav-link active" href="/">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-people text-dark text-sm opacity-10"></i>
+                        <i class="bi bi-easel2 text-dark text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Users</span>
+                    <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/report">
+                <a class="nav-link active" href="https://forms.gle/1C9qXQ72kdSUcs1G9" target="_blank">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-clipboard2-pulse text-dark text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">PTO Result</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/users">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people text-dark text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">View Users</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/reports">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="bi bi-book text-dark text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Generate Report</span>
+                    <span class="nav-link-text ms-1">Manage Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/roles-permissions">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-diamond-half text-dark text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Roles & Permissions</span>
                 </a>
             </li>
         </ul>

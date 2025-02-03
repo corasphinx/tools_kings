@@ -33,7 +33,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 }
 
                 // Store the username or any other user details in session
-                $_SESSION['username'] = $Account->user_name;  // Assuming $Account->user_name holds the username
                 $_SESSION['email'] = $Account->email;         // Assuming $Account->email holds the email
                 $redirect = '/';
 

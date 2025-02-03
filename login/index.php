@@ -57,4 +57,4 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
     </div>
 </section>
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
-<script src="./script.js?v=4"></script>
+<script src="./script.js?v=8"></script>

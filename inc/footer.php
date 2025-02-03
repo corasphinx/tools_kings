@@ -4,6 +4,7 @@
   <script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="/assets/js/plugins/chartjs.min.js"></script>
+  <script src="/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="/assets/vendor/jquery-3.7.1.min.js"></script>
   <script src="/assets/vendor/sweetalert/sweetalert2@11.js"></script>
   <script>

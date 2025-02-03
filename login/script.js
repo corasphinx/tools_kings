@@ -64,9 +64,9 @@ $(document).ready(function () {
         // If validation passes
         if (isValid) {
             // Change button text and disable it
-            const $button = $('#signinButton');
-            const originalText = $button.text();
-            $button.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Signing in...');
+            const _thisButton = $('#signinButton');
+            const _thisButtonHTML = _thisButton.text();
+            _thisButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Signing in...');
             $.ajax({
                 url: window.location.protocol + "//" + window.location.hostname + `/controllers/Auth/login.php`,
                 data: {
@@ -83,13 +83,19 @@ $(document).ready(function () {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success!',
-                        text: response.message || 'Login successful',
+                        text: rd.message,
                         timer: 1500
                     }).then(() => {
                         location.href = rd.data.redirect;
                     });
                   } else {
-                    toastr.warning(rd.message);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: rd.message,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
                   }
                 },
                 error: function (error) {
@@ -102,7 +108,6 @@ $(document).ready(function () {
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     });
-                    $button.prop('disabled', false).text(originalText);
                 },
             })
         }
