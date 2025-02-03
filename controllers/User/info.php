@@ -11,4 +11,9 @@ if (!isset($_POST['id']) || !$_POST['id'])
     $System->exitJsonResponse(false, "Invalid user id.");
 
 $User = $System->startClass("User");
-$System->exitJsonResponse(true, "Successfully fetched.", $User->info($_POST['id']));
+
+$UserDocument = $System->startClass("UserDocument");
+$user = $User->info($_POST['id']);
+$user['documents'] = $UserDocument->fetch_by_user_id($_POST['id']);
+
+$System->exitJsonResponse(true, "Successfully fetched.", $user);

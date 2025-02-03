@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 require_once "{$_SERVER['DOCUMENT_ROOT']}/controllers/Auth/user_session_check.php";
 require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 ?>
+<link href="./style.css?v=2" rel="stylesheet">
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -110,47 +111,29 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
                         <!-- Attachments Tab -->
                         <div class="tab-pane fade" id="attachments" role="tabpanel"
                             aria-labelledby="attachments-tab">
-                            <form id="attachmentsForm">
-                                <div class="mb-3">
-                                    <label for="documentUpload" class="form-label">Upload Documents</label>
-                                    <input type="file" class="form-control" id="documentUpload" multiple>
-                                </div>
+                            <div class="card">
+                                <div class="card-body pt-3">
+                                    <!-- Uploaded Area -->
+                                    <div id="documentsContainer">
+                                        <div class="d-flex justify-content-center">
+                                            <span class="spinner-border spinner-border-sm text-bos" role="status" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                    <!-- File List -->
+                                    <div class="file-list" id="fileList"></div>
+                                    <!-- Upload Area -->
+                                    <div class="upload-area" id="uploadArea">
+                                        <input type="file" id="fileInput" multiple>
+                                        <i class="bi bi-cloud-arrow-up upload-icon"></i>
+                                        <h5>Drag & Drop files here</h5>
+                                        <p class="text-muted">or</p>
+                                        <button class="btn btn-primary">
+                                            <i class="bi bi-folder2-open me-2"></i>Browse Files
+                                        </button>
+                                    </div>
 
-                                <!-- Documents List -->
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Document Name</th>
-                                                <th>Date Uploaded</th>
-                                                <th>Size</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Resume.pdf</td>
-                                                <td>2025-02-04</td>
-                                                <td>256 KB</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-primary">
-                                                        <i class="bi bi-download"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-sm btn-danger">
-                                                        <i class="bi bi-trash"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
-
-                                <div class="text-end mt-3">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="bi bi-upload me-1"></i> Upload Files
-                                    </button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
