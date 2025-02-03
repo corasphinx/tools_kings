@@ -75,7 +75,8 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 </div>
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
-<?php include 'components/edit-to-do-list.php'; ?>
+<?php include 'components/edit-to-do-list-modal.php'; ?>
+<?php include 'components/edit-event-modal.php'; ?>
 
 <script src='/assets/vendor/fullcalendar@5.11.3/main.js'></script>
 <script src="./script.js?v=7"></script>
