@@ -6,7 +6,7 @@ require_once "{$_SERVER['DOCUMENT_ROOT']}/controllers/Auth/user_session_check.ph
 require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 ?>
 <!-- FullCalendar CSS -->
-<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.css' rel='stylesheet' />
+<link href='/assets/vendor/fullcalendar@5.11.3/main.css' rel='stylesheet' />
 <link href="./style.css" rel="stylesheet">
 <div class="container-fluid py-4">
     <div class="row mt-4">
@@ -71,5 +71,5 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
 <?php include "{$_SERVER['DOCUMENT_ROOT']}/components/edit-user-modal.php" ?>
 
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.js'></script>
+<script src='/assets/vendor/fullcalendar@5.11.3/main.js'></script>
 <script src="./script.js?v=7"></script>

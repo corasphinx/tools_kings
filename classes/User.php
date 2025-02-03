@@ -67,5 +67,15 @@ if (!class_exists("User")) {
         {
             return $this->query("DELETE FROM users WHERE id = ?", "i", [$id]);
         }
+
+        public function fetch_by_email($email)
+        {
+            $user = $this->query("SELECT users.* FROM users WHERE users.email = ?", "s", [$email]);
+            if (!$user) {
+                return false;
+            } else {
+                return $user[0];
+            }
+        }
     }
 }
