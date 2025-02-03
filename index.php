@@ -12,16 +12,22 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
     <div class="row mt-4">
         <div class="col-md-6 col-sm-12">
             <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>To Do List</h6>
+
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">To Do List</h6>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#editTaskModal">
+                        <i class="bi bi-plus-lg"></i> Create
+                    </button>
                 </div>
+
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0" id="usersTable">
+                        <table class="table align-items-center mb-0" id="taskTable">
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Task</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Subject</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Due By</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
@@ -69,7 +75,7 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 </div>
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
-<?php include "{$_SERVER['DOCUMENT_ROOT']}/components/edit-user-modal.php" ?>
+<?php include 'components/edit-to-do-list.php'; ?>
 
 <script src='/assets/vendor/fullcalendar@5.11.3/main.js'></script>
 <script src="./script.js?v=7"></script>
