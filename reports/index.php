@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once "{$_SERVER['DOCUMENT_ROOT']}/controllers/Auth/user_session_check.php";
 require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 ?>
 <link href="./style.css" rel="stylesheet">
@@ -12,12 +13,12 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
             <input type="file" id="fileInput" accept=".txt" style="display: none;">
         </div>
     </div>
-    
+
     <div class="row mt-4">
         <div class="col-12">
             <div class="card mb-4">
                 <!-- Card Header with collapse button -->
-                <div class="card-header pb-0" data-bs-toggle="collapse" data-bs-target="#reportsContainer" 
+                <div class="card-header pb-0" data-bs-toggle="collapse" data-bs-target="#reportsContainer"
                     aria-expanded="true" aria-controls="reportsContainer" style="cursor: pointer;">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="mb-0">Parse result</h6>

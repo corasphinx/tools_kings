@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once "{$_SERVER['DOCUMENT_ROOT']}/controllers/Auth/user_session_check.php";
 require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 ?>
 <link href="./style.css" rel="stylesheet">
@@ -92,11 +93,11 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
         <div class="col-md-6 col-sm-12">
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                <h6 class="text-capitalize">Hourly Performance</h6>
-                <p class="text-sm mb-0">
-                    <i class="fa fa-arrow-up text-success"></i>
-                    <span class="font-weight-bold"><?= date('Y-m-d') ?></span>
-                </p>
+                    <h6 class="text-capitalize">Hourly Performance</h6>
+                    <p class="text-sm mb-0">
+                        <i class="fa fa-arrow-up text-success"></i>
+                        <span class="font-weight-bold"><?= date('Y-m-d') ?></span>
+                    </p>
                 </div>
                 <div class="card-body p-3">
                     <div class="chart">
@@ -108,11 +109,11 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
         <div class="col-md-6 col-sm-12">
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                <h6 class="text-capitalize">Breakdown by Project</h6>
-                <p class="text-sm mb-0">
-                    <i class="fa fa-arrow-up text-success"></i>
-                    <span class="font-weight-bold"><?= date('Y-m-d') ?></span>
-                </p>
+                    <h6 class="text-capitalize">Breakdown by Project</h6>
+                    <p class="text-sm mb-0">
+                        <i class="fa fa-arrow-up text-success"></i>
+                        <span class="font-weight-bold"><?= date('Y-m-d') ?></span>
+                    </p>
                 </div>
                 <div class="card-body p-3">
                     <div class="chart">
@@ -126,7 +127,7 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
         <div class="col-12">
             <div class="card mb-4">
                 <!-- Card Header with collapse button -->
-                <div class="card-header pb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#parseResultBody" 
+                <div class="card-header pb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#parseResultBody"
                     aria-expanded="true" aria-controls="parseResultBody" style="cursor: pointer;">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="mb-0">Parse result</h6>
