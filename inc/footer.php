@@ -24,3 +24,6 @@
   </body>
 
   </html>
+  <script>
+      const LOGGED_IN_USER_ID = <?= $Account->id ?>;
+  </script>

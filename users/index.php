@@ -40,4 +40,5 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 </div>
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
+<?php require_once("{$_SERVER['DOCUMENT_ROOT']}/components/edit-user-modal.php"); ?>
 <script src="./script.js?v=6"></script>

@@ -5,11 +5,10 @@ error_reporting(E_ALL);
 require_once "{$_SERVER['DOCUMENT_ROOT']}/controllers/Auth/user_session_check.php";
 require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 ?>
-<link href='/assets/vendor/fullcalendar@5.11.3/main.css' rel='stylesheet' />
 <link href="./style.css?v=3" rel="stylesheet">
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container-fluid py-4">
+    <div class="row mt-4">
+        <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header">
                     <h4 class="mb-0">User Profile</h4>
@@ -160,5 +159,5 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 </div>
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
-<script src='/assets/vendor/fullcalendar@5.11.3/main.js'></script>
+<?php require_once("{$_SERVER['DOCUMENT_ROOT']}/components/calendar.php"); ?>
 <script src="./script.js?v=2"></script>
