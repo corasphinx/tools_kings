@@ -14,7 +14,7 @@
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
     <!-- CSS Files -->
-    <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=4" rel="stylesheet" />
+    <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=5" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">

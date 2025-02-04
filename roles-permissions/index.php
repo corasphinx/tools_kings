@@ -13,6 +13,9 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Roles</h6>
+                    <button class="btn btn-primary btn-sm float-end" id="addRoleBtn">
+                        Add Role
+                    </button>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -36,6 +39,9 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Permissions</h6>
+                    <button class="btn btn-primary btn-sm float-end" id="addPermissionBtn">
+                        Add Permission
+                    </button>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -60,5 +66,7 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 </div>
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
+<?php require_once("{$_SERVER['DOCUMENT_ROOT']}/components/edit-role-modal.php"); ?>
+<?php require_once("{$_SERVER['DOCUMENT_ROOT']}/components/edit-permission-modal.php"); ?>
 
 <script src="./script.js?v=1"></script>

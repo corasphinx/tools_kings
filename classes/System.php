@@ -629,7 +629,27 @@ if (!class_exists("System")) {
             return $str;
         }
 
+        public function updateTableField($table, $id, $field_name, $field_value)
+        {
+            $q = $this->db->prepare("UPDATE $table SET $field_name=?, updated_at=NOW() WHERE id=?");
+            $q->bind_param("si", $field_value, $id);
+            $q->execute();
+            if ($q->error != "") {
+                return false;
+            } else {
+                return true;
+            }
+        }
 
+        public function delete_row($table, $id)
+        {
+            $this->query("DELETE FROM $table WHERE id = ?", "i", [$id]);
+        }
+
+        public function fetch_all_rows($table)
+        {
+            return $this->query("SELECT * FROM $table");
+        }
 
 
         var $version;
