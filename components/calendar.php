@@ -154,7 +154,7 @@
             $.ajax({
                 url: window.location.protocol + "//" + window.location.hostname + `/controllers/Event/fetch_by_user_id.php`,
                 data: {
-                    user_id: LOGGED_IN_USER_ID
+                    user_id: selectedCalendarUserId
                 },
                 type: "POST",
                 dataType: "text",
@@ -251,5 +251,10 @@
 
         }
 
+        $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function(e) {
+            if ($(e.target).attr('id') === 'calendar-tab') {
+                calendar.render();
+            }
+        });
     });
 </script>

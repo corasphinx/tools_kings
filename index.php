@@ -75,6 +75,9 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
 <?php include 'components/edit-to-do-list-modal.php'; ?>
+<script>
+    const selectedCalendarUserId = LOGGED_IN_USER_ID;
+</script>
 <?php include 'components/calendar.php'; ?>
 
 

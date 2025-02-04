@@ -159,5 +159,9 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 </div>
 
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/footer.php"); ?>
+<script>
+    const url = new URL(window.location.href);
+    const selectedCalendarUserId = url.searchParams.get('i');
+</script>
 <?php require_once("{$_SERVER['DOCUMENT_ROOT']}/components/calendar.php"); ?>
 <script src="./script.js?v=2"></script>
