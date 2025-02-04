@@ -118,7 +118,7 @@
                     description: $('#eventDescription').val(),
                     is_global: $('#eventIsGlobal').is(':checked') ? 1 : 0,
                     assigneees: $('#assigneees').val(),
-                    created_by: LOGGED_IN_USER_ID
+                    created_by: selectedCalendarUserId
                 };
 
                 // Show loading state
