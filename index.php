@@ -14,9 +14,11 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 
                 <div class="card-header pb-0 d-flex justify-content-between align-items-center">
                     <h6 class="mb-0">To Do List</h6>
-                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#editTaskModal">
-                        <i class="bi bi-plus-lg"></i> Create
-                    </button>
+                    <?php if (in_array("Add To-Do Item", $Account->permissions)) { ?>
+                        <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#editTaskModal">
+                            <i class="bi bi-plus-lg"></i> Create
+                        </button>
+                    <?php } ?>
                 </div>
 
                 <div class="card-body px-0 pt-0 pb-2">
