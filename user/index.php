@@ -31,6 +31,11 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
                                 data-bs-target="#calendarPanel" type="button" role="tab"
                                 aria-controls="calendarPanel" aria-selected="false">Calendar</button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pto-tab" data-bs-toggle="tab"
+                                data-bs-target="#pto" type="button" role="tab"
+                                aria-controls="pto" aria-selected="false">PTO</button>
+                        </li>
                     </ul>
 
                     <!-- Tab Contents -->
@@ -111,8 +116,8 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 
                                 <!-- Submit Button -->
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary" id="saveButton" name="saveButton">
-                                        <i class="bi bi-save me-1"></i> Save Changes
+                                    <button type="submit" class="btn btn-success" id="saveButton" name="saveButton">
+                                        <i class="fas fa-save me-1"></i> Save Changes
                                     </button>
                                 </div>
                             </form>
@@ -145,6 +150,7 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
                                 </div>
                             </div>
                         </div>
+
                         <!-- Calendar Tab -->
                         <div class="tab-pane fade" id="calendarPanel" role="tabpanel"
                             aria-labelledby="calendar-tab">
@@ -153,6 +159,40 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
                                     <div class="calendar-wrapper">
                                         <div id="calendar"></div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PTO Tab -->
+                        <div class="tab-pane fade" id="pto" role="tabpanel"
+                            aria-labelledby="pto-tab">
+                            <div class="card">
+                                <div class="card-body pt-3">
+                                    <div class="table-responsive p-0">
+                                        <div class="mb-3">
+                                            <button type="button" class="btn btn-primary btn-sm float-end" id="addPtoRow">
+                                                <i class="fas fa-plus"></i> Add New Row
+                                            </button>
+                                        </div>
+
+                                        <table class="table align-items-center mb-0" id="ptoTable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
+                                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Amount</th>
+                                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Time Off</th>
+                                                    <th class="text-secondary opacity-7"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-end">
+                                    <button type="button" class="btn btn-success btn-sm" id="savePTO">
+                                        <i class="fas fa-save me-1"></i> Save PTO
+                                    </button>
                                 </div>
                             </div>
                         </div>
