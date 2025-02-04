@@ -15,6 +15,8 @@ if ($_POST['pto_data']) {
     foreach ($_POST['pto_data'] as $pto) {
         $PTO->create([
             'user_id' => $_POST['user_id'],
+            'start' => $pto['start'],
+            'end' => $pto['end'],
             'amount' => $pto['amount'],
             'time_off' => $pto['time_off'],
             'created_by' => $Account->id

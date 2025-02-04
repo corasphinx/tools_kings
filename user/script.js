@@ -311,7 +311,10 @@ $(document).ready(function () {
         const newRow = `
             <tr>
                 <td class="align-middle">
-                    <span class="text-secondary text-xs font-weight-bold">${ptoRowCount}</span>
+                    <input type="date" class="form-control form-control-sm" value="" name="start[]">
+                </td>
+                <td class="align-middle">
+                    <input type="date" class="form-control form-control-sm" value="" name="end[]">
                 </td>
                 <td>
                     <input type="number" class="form-control form-control-sm" name="amount[]" required>
@@ -354,6 +357,8 @@ $(document).ready(function () {
         let ptoData = [];
         $('#ptoTable tbody tr').each(function () {
             const row = {
+                start: $(this).find('input[name="start[]"]').val(),
+                end: $(this).find('input[name="end[]"]').val(),
                 amount: $(this).find('input[name="amount[]"]').val(),
                 time_off: $(this).find('select[name="timeOff[]"]').val()
             };
@@ -373,7 +378,10 @@ $(document).ready(function () {
             const newRow = `
                 <tr>
                     <td class="align-middle">
-                        <span class="text-secondary text-xs font-weight-bold">${ptoRowCount}</span>
+                        <input type="date" class="form-control form-control-sm" value="${pto.start}" name="start[]">
+                    </td>
+                    <td class="align-middle">
+                        <input type="date" class="form-control form-control-sm" value="${pto.end}" name="end[]">
                     </td>
                     <td>
                         <input type="number" class="form-control form-control-sm" name="amount[]" 

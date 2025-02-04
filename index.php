@@ -49,7 +49,8 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
                         <table class="table align-items-center mb-0" id="ptoTable">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Start</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">End</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Amount</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Time Off</th>
                                     <th class="text-secondary opacity-7"></th>

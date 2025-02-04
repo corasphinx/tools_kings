@@ -11,8 +11,8 @@ if (!class_exists("PTO")) {
         public function create(
             $data
         ) {
-            $q = $this->db->prepare("INSERT INTO ptos (user_id, amount, time_off, created_by) VALUES (?,?,?,?)");
-            $q->bind_param("idsi", $data['user_id'], $data['amount'], $data['time_off'], $data['created_by']);
+            $q = $this->db->prepare("INSERT INTO ptos (user_id, start, end, amount, time_off, created_by) VALUES (?,?,?,?,?,?)");
+            $q->bind_param("issdsi", $data['user_id'], $data['start'], $data['end'], $data['amount'], $data['time_off'], $data['created_by']);
             $q->execute();
             if ($q->affected_rows == 1) {
                 return $q->insert_id;

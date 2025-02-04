@@ -10,7 +10,10 @@ $(document).ready(function () {
             const newRow = `
                 <tr>
                     <td class="align-middle ps-4">
-                        <p class="text-secondary text-xs font-weight-bold mb-0">${index + 1}</p>
+                        <p class="mb-0">${pto.start}</p>
+                    </td>
+                    <td class="align-middle">
+                        <p class="mb-0">${pto.end}</p>
                     </td>
                     <td>
                         <p class="font-weight-bold mb-0">${pto.amount}</p>
