@@ -24,30 +24,36 @@
                     <span class="nav-link-text ms-1">PTO Result</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/users">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-people text-dark text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">View Users</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/reports">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-book text-dark text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Manage Reports</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/roles-permissions">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-diamond-half text-dark text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Roles & Permissions</span>
-                </a>
-            </li>
+            <?php if (in_array("Manage Users", $Account->permissions)) { ?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/users">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-people text-dark text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">View Users</span>
+                    </a>
+                </li>
+            <?php } ?>
+            <?php if (in_array("Manage Reports", $Account->permissions)) { ?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/reports">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-book text-dark text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Manage Reports</span>
+                    </a>
+                </li>
+            <?php } ?>
+            <?php if (in_array("Manage Roles", $Account->permissions)) { ?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/roles-permissions">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-diamond-half text-dark text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Roles & Permissions</span>
+                    </a>
+                </li>
+            <?php } ?>
         </ul>
     </div>
 </aside>

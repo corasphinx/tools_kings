@@ -11,8 +11,8 @@ if (!class_exists("Event")) {
         public function create(
             $data
         ) {
-            $q = $this->db->prepare("INSERT INTO events (subject, date, start_at, end_at, status, description, created_by) VALUES (?,?,?,?,?,?,?)");
-            $q->bind_param("ssssssi", $data['subject'], $data['date'], $data['start_at'], $data['end_at'], $data['status'], $data['description'], $data['created_by']);
+            $q = $this->db->prepare("INSERT INTO events (subject, date, start_at, end_at, status, description, is_global, created_by) VALUES (?,?,?,?,?,?,?,?)");
+            $q->bind_param("ssssssii", $data['subject'], $data['date'], $data['start_at'], $data['end_at'], $data['status'], $data['description'], $data['is_global'], $data['created_by']);
             $q->execute();
             if ($q->affected_rows == 1) {
                 return $q->insert_id;
@@ -36,8 +36,9 @@ if (!class_exists("Event")) {
 
         public function fetch_by_user_id($user_id)
         {
-            return $this->query("SELECT * FROM events WHERE created_by = ?", "i", [$user_id]);
+            return $this->query("SELECT * FROM events WHERE created_by = ? OR is_global = 1", "i", [$user_id]);
         }
+
         public function fetch_all()
         {
             return $this->query("SELECT * FROM events");

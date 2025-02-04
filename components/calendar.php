@@ -115,7 +115,8 @@
                     start_at: $('#eventStartAt').val(),
                     end_at: $('#eventEndAt').val(),
                     status: $('#eventStatus').val(),
-                    description: $('#eventDescription').val()
+                    description: $('#eventDescription').val(),
+                    is_global: $('#eventIsGlobal').is(':checked') ? 1 : 0
                 };
 
                 // Show loading state
@@ -145,6 +146,7 @@
             $form[0].reset();
             $('#eventId').val('');
             $('#editEventModalLabel').text('Create New Event');
+            $('#eventIsGlobal').prop('checked', false);
             $('#saveEvent').prop('disabled', false).html('Save Event');
         });
 

@@ -10,6 +10,7 @@ if (!class_exists("Account")) {
         var $password;
         var $updated_at;
         var $created_at;
+        var $permissions = [];
 
         public function __construct($id)
         {

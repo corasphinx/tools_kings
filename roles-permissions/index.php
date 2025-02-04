@@ -8,16 +8,36 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
 <!-- FullCalendar CSS -->
 <link href="./style.css" rel="stylesheet">
 <div class="container-fluid py-4">
-    <div class="row mt-4">
-        <div class="col-md-6 col-sm-12">
-            <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>Roles</h6>
-                    <button class="btn btn-primary btn-sm float-end" id="addRoleBtn">
-                        Add Role
+    <div class="card mt-4">
+        <div class="card-header">
+            <!-- Tab Navigation -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="roles-tab" data-bs-toggle="tab" data-bs-target="#roles-panel"
+                        type="button" role="tab" aria-controls="roles-panel" aria-selected="true">
+                        Roles
                     </button>
-                </div>
-                <div class="card-body px-0 pt-0 pb-2">
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="permissions-tab" data-bs-toggle="tab" data-bs-target="#permissions-panel"
+                        type="button" role="tab" aria-controls="permissions-panel" aria-selected="false">
+                        Permissions
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="card-body">
+            <div class="tab-content">
+                <!-- Roles Tab -->
+                <div class="tab-pane fade show active" id="roles-panel" role="tabpanel" aria-labelledby="roles-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0">Roles</h6>
+                        <button class="btn btn-primary btn-sm" id="addRoleBtn">
+                            Add Role
+                        </button>
+                    </div>
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0" id="rolesTable">
                             <thead>
@@ -33,17 +53,15 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="card mb-4">
-                <div class="card-header pb-0">
-                    <h6>Permissions</h6>
-                    <button class="btn btn-primary btn-sm float-end" id="addPermissionBtn">
-                        Add Permission
-                    </button>
-                </div>
-                <div class="card-body px-0 pt-0 pb-2">
+
+                <!-- Permissions Tab -->
+                <div class="tab-pane fade" id="permissions-panel" role="tabpanel" aria-labelledby="permissions-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0">Permissions</h6>
+                        <button class="btn btn-primary btn-sm" id="addPermissionBtn">
+                            Add Permission
+                        </button>
+                    </div>
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0" id="permissionsTable">
                             <thead>
@@ -62,6 +80,7 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/inc/header.php");
             </div>
         </div>
     </div>
+
 
 </div>
 

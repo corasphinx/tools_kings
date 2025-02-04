@@ -37,6 +37,16 @@
                         <textarea class="form-control" id="eventDescription" rows="3"
                             placeholder="Enter event description..."></textarea>
                     </div>
+                    <?php if (in_array("Global Calendar", $Account->permissions)) { ?>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="eventIsGlobal">
+                                <label class="form-check-label" for="eventIsGlobal">
+                                    Is Global
+                                </label>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </form>
             </div>
             <div class="modal-footer">

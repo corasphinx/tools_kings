@@ -2,7 +2,7 @@ $(document).ready(function () {
     const url = new URL(window.location.href);
     const ID = url.searchParams.get('i');
 
-    loadUserData();
+    loadRoles();
     function loadUserData() {
 
         $.ajax({
@@ -37,11 +37,58 @@ $(document).ready(function () {
             },
         })
     }
+    function loadRoles() {
 
+        $.ajax({
+            url: window.location.protocol + "//" + window.location.hostname + `/controllers/Role/fetch_all.php`,
+            data: {
+            },
+            type: "POST",
+            dataType: "text",
+            success: function (rd) {
+                rd = JSON.parse(rd);
+                if (rd.success) {
+                    renderRoles(rd.data);
+                    loadUserData();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: rd.message,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            },
+            error: function (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.responseText,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                });
+            },
+        })
+    }
+
+    function renderRoles(roles) {
+        $('#role').empty();
+
+        if (roles) {
+            roles.map(role => {
+                $('#role').append(`<option value="${role.id}">${role.name}</option>`);
+            })
+
+        } else {
+            $('#role').append(`<option value="">No roles available</option>`);
+        }
+    }
     function renderUserData(user) {
 
         $('#firstName').val(user.first_name);
         $('#lastName').val(user.last_name);
+        $('#role').val(user.role_id);
         $('#email').val(user.email);
         $('#phone').val(user.phone);
         $('#address').val(user.address);

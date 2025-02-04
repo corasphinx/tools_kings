@@ -77,5 +77,27 @@ if (!class_exists("User")) {
                 return $user[0];
             }
         }
+
+        public function get_permissions($user_id)
+        {
+            $permissions = $this->query("
+            SELECT
+                permissions.*
+            FROM users
+            LEFT JOIN role_permission_refs ON role_permission_refs.role_id = users.role_id
+            LEFT JOIN permissions ON role_permission_refs.permission_id = permissions.id
+            WHERE users.id = ?", "i", [$user_id]);
+
+            $result = [];
+            if ($permissions) {
+                foreach ($permissions as $key => $permission) {
+                    if ($permission['name']) {
+                        $result[] = $permission['name'];
+                    }
+                }
+            }
+
+            return $result;
+        }
     }
 }

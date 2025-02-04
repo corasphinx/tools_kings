@@ -56,5 +56,8 @@ if ($Account == false) {
     } else {
         $System->exitJsonResponse(false, "You're not logged in! For your security, you must login to your account again. If you are not automatically redirected, please refresh the page.", array("logout" => true));
     }
+} else {
+    $User = $System->startClass("User");
+    $Account->permissions = $User->get_permissions($Account->id);
 }
 ?>

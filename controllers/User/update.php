@@ -19,6 +19,9 @@ if (isset($_POST['firstName']) && $_POST['firstName'])
 if (isset($_POST['lastName']) && $_POST['lastName'])
     $User->updateField($_POST['id'], 'last_name', $_POST['lastName']);
 
+if (isset($_POST['role']) && $_POST['role'])
+    $User->updateField($_POST['id'], 'role_id', $_POST['role']);
+
 if (isset($_POST['email']) && $_POST['email']) {
     $email_user = $User->fetch_by_email($_POST['email']);
     if ($email_user && $email_user['id'] != $_POST['id']) {
