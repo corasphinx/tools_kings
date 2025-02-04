@@ -116,7 +116,9 @@
                     end_at: $('#eventEndAt').val(),
                     status: $('#eventStatus').val(),
                     description: $('#eventDescription').val(),
-                    is_global: $('#eventIsGlobal').is(':checked') ? 1 : 0
+                    is_global: $('#eventIsGlobal').is(':checked') ? 1 : 0,
+                    assigneees: $('#assigneees').val(),
+                    created_by: LOGGED_IN_USER_ID
                 };
 
                 // Show loading state
@@ -128,14 +130,10 @@
                 if (!event.id) {
                     createEvent(event);
                 } else {
-                    updateEvent(event);
+                    // updateEvent(event);
                 }
 
-                // Close modal
-                $eventModal.modal('hide');
 
-                // Reset form
-                $form[0].reset();
             } else {
                 $form[0].reportValidity();
             }
@@ -148,6 +146,9 @@
             $('#editEventModalLabel').text('Create New Event');
             $('#eventIsGlobal').prop('checked', false);
             $('#saveEvent').prop('disabled', false).html('Save Event');
+            if ($('#assigneees').length) {
+                $('#assigneees').val(null).trigger('change');
+            }
         });
 
         loadEvents();
@@ -218,17 +219,21 @@
                             timer: 1500
                         })
                         // Add event to calendar
-                        calendar.addEvent({
-                            title: event.subject,
-                            start: event.date,
-                            end: event.date,
-                            extendedProps: {
-                                start_at: event.start_at,
-                                end_at: event.end_at,
-                                description: event.description
-                            },
-                            backgroundColor: event.status == 'not_available' ? '#f44336' : '#4caf50'
-                        });
+                        if ($('#assigneees').length && (
+                                $('#assigneees').val().filter(id => id == LOGGED_IN_USER_ID).length > 0 || !$('#assigneees').val().length
+                            ) || !$('#assigneees').length) {
+                            calendar.addEvent({
+                                title: event.subject,
+                                start: event.date,
+                                end: event.date,
+                                extendedProps: {
+                                    start_at: event.start_at,
+                                    end_at: event.end_at,
+                                    description: event.description
+                                },
+                                backgroundColor: event.status == 'not_available' ? '#f44336' : '#4caf50'
+                            });
+                        }
                     } else {
                         Swal.fire({
                             icon: 'error',
@@ -238,6 +243,12 @@
                             confirmButtonText: 'OK'
                         });
                     }
+
+                    // Close modal
+                    $eventModal.modal('hide');
+
+                    // Reset form
+                    $form[0].reset();
                 },
                 error: function(error) {
                     Swal.fire({
